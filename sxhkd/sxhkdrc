@@ -125,3 +125,7 @@ XF86MonBrightnessUp
 #locking
 super + l
    slock
+
+#scratchpad
+super + u
+    $HOME/.bin/scratch.sh
