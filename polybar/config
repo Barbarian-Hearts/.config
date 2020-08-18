@@ -1,8 +1,6 @@
 [global/wm]
-
 margin-top = 0
 margin-bottom = 0
-
 throttle-output = 5
 throttle-output-for = 10
 throttle-input-for = 30
@@ -13,18 +11,10 @@ compositing-overline = over
 compositing-underline = over
 compositing-border = over
 
-; format-foreground = #FF0000
-; format-background = #00FF00
-; format-underline =
-; format-overline =
-; format-spacing =
-; format-padding =
-; format-margin =
-; format-offset =
-
 [colors]
- background = #161113
+ background = #ee161113
  foreground = #deadbe
+ icons = #161113
  alert = #bedead
 
 ##### bspwm
@@ -36,7 +26,6 @@ height = 20
 radius = 0.0
 fixed-center = true
 bottom = false
-separator =  
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size = 2
@@ -60,7 +49,7 @@ modules-left = batteryleft bspwm xwindow
 modules-center = mpd
 modules-right = fade1 xbacklight fade2 pacu fade3 volume fade4 wireless-network fade5 timeIsRight
 
-tray-detached = false
+tray-detached = true
 tray-offset-x = 0
 tray-offset-y = 0
 tray-position = right
@@ -68,7 +57,6 @@ tray-padding = 2
 tray-maxsize = 20
 tray-scale = 1.0
 tray-background = ${colors.background}
-
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
 
@@ -76,10 +64,7 @@ scroll-down = bspwm-deskprev
 
 [module/bspwm]
 type = internal/bspwm
-
 enable-click = true
-enable-scroll = true
-reverse-scroll = true
 pin-workspaces = true
 
 ws-icon-0 = 1;
@@ -91,23 +76,17 @@ ws-icon-5 = 6;
 ws-icon-6 = 7;
 ws-icon-default = "n/a"
 
-
-; format = <label-state><label-mode>
-
 label-focused ="%icon% "
 label-focused-background = ${colors.foreground}
 label-focused-underline = ${colors.background}
 label-focused-padding = 2 
-label-focused-foreground = ${colors.background} 
-
+label-focused-foreground = ${colors.icons} 
 label-occupied = %icon%
 label-occupied-padding = 2
 label-occupied-background = ${colors.background}
 labeö-occupied-underline = ${colors.foreground}
-
 label-urgent = %icon%
 label-urgent-padding = 3
-
 label-empty = %icon%
 label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
@@ -156,30 +135,24 @@ battery = BAT0
 adapter = AC0
 full-at = 98
 time-format = %H:%M
-label-charging = "  %percentage%% "
-label-discharging = "  %time% " 
-label-full = "[100%] "
-
+label-charging = "  %percentage%% "
+label-discharging = "  %time% " 
+label-full = "   "
 format-charging = <label-charging>
-format-charging-underline = ${colors.foreground}
 format-charging-foreground = ${colors.foreground}
 format-charging-background = ${colors.background}
-
 format-discharging-foreground = ${colors.foreground} 
 format-discharging-background = ${colors.background}
 
 [module/timeIsRight]
 ;https://github.com/jaagr/polybar/wiki/Module:-date
 type = internal/date
-; Seconds to sleep between updates
 interval = 5
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
-;OLD date = " %a %d.%b.%y"
-;OLD time = %H:%M
 date = "%d.%m.%y"
 time = %H:%M
 format-prefix = "   "
-format-prefix-foreground = ${colors.background}
+format-prefix-foreground = ${colors.icons}
 format-foreground = ${colors.background}
 format-background = #f8eef2
 label = "%date% %time% "
@@ -212,68 +185,56 @@ type = custom/script
 exec = pacman -Qu | wc -l
 interval = 1000
 label = %output%
-format-foreground = ${colors.background}
+format-foreground = ${colors.icons}
 format-background = #e4bdcb
 format-prefix = "  "
-format-prefix-foreground = ${colors.background}
+format-prefix-foreground = ${colors.icons}
 format-prefix-background = #e4bdcb
 
 [module/volume]
 ;https://github.com/jaagr/polybar/wiki/Module:-volume
 type = internal/alsa
-;OLD format-volume = "<label-volume>  <bar-volume>"
 format-volume = <label-volume>
-
 label-volume = "  %percentage%%"
 label-volume-foreground = #1a0a14
 label-volume-background = #ebcdd8
-label-muted = - 
-
+label-muted = " "
 format-volume-foreground = #9f78e1
 format-volume-background = #ebcdd8 
-format-muted-prefix = " "
-format-muted-prefix-foreground = ${colors.background}
-format-muted-foreground = ${colors.background}
+format-muted-prefix-foreground = ${colors.icons}
+format-muted-foreground = ${colors.icons}
 format-muted-background = #ebcdd8
 
 [module/wireless-network]
- ;https://github.com/jaagr/polybar/wiki/Module:-network
- type = internal/network
- interface = ${env:WIRELESS}
- interval = 3.0
- label-connected ="  " 
-
- format-connected = <label-connected>
- format-connected-foreground = ${colors.background} 
- format-connected-background = #f1dee5
- ;format-connected-prefix = "  "
- ;format-connected-prefix-foreground = ${colors.background}
- ;format-connected-prefix-background = #f1dee5
-
- label-disconnected = " " 
- label-disconnected-foreground = ${colors.background}
- label-disconnected-background = #f1dee5
+;https://github.com/jaagr/polybar/wiki/Module:-network
+type = internal/network
+interface = ${env:WIRELESS}
+interval = 3.0
+label-connected ="  " 
+format-connected = <label-connected>
+format-connected-foreground = ${colors.icons} 
+format-connected-background = #f1dee5
+label-disconnected = " " 
+label-disconnected-foreground = ${colors.icons}
+label-disconnected-background = #f1dee5
 
 [module/xbacklight]
 ;https://github.com/jaagr/polybar/wiki/Module:-xbacklight
 type = internal/xbacklight
-;OLD format = <label> <bar>
 format = <label>
 format-prefix = "  "
-format-prefix-foreground = ${colors.background}
+format-prefix-foreground = ${colors.icons}
 format-prefix-background = ${colors.foreground}
 label = %percentage%%
-format-foreground = ${colors.background}
+format-foreground = ${colors.icons}
 format-background = ${colors.foreground}
 
 
 [module/xwindow]
 ;https://github.com/jaagr/polybar/wiki/Module:-xwindow
 type = internal/xwindow
-
 label = %title%
 label-maxlen = 14
-
 format-prefix = "| ~> "
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
