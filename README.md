@@ -2,20 +2,20 @@
 
 Personal config files 
 
-###.bin
+###. bin
 Contains some scripts e.g. scratchpad creation for alacritty
 
-###alacritty
+### alacritty
 Mostly color settings
 
-###bspwm
+### bspwm
 some autostart stuff and window rules
 
-###ncmcpp
+### ncmcpp
 Color and layout config
 
-###polybar
+### polybar
 Color and module config
 
-##sxhkd
+## sxhkd
 Shortcuts
