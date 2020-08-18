@@ -49,7 +49,7 @@ modules-left = batteryleft bspwm xwindow
 modules-center = mpd
 modules-right = fade1 xbacklight fade2 pacu fade3 volume fade4 wireless-network fade5 timeIsRight
 
-tray-detached = true
+tray-detached = false
 tray-offset-x = 0
 tray-offset-y = 0
 tray-position = right
