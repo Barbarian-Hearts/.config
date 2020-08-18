@@ -19,3 +19,17 @@ Color and module config
 
 ### sxhkd
 Shortcuts
+
+## Dependencies
+* bspwm
+* sxkhd
+* polybar
+* picom
+* alacritty
+* [Fork Awesome](https://forkaweso.me/Fork-Awesome/)
+* Hack Nerd Font
+
+## Optional
+* mpd
+* ncmpcpp
+
