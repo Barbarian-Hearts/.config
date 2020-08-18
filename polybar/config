@@ -41,8 +41,8 @@ module-margin-left = 0
 module-margin-right = 0
 
 ###### Fonts
-font-0 = "UbuntuMono Nerd Font:size=11;2"
-font-1 = "UbuntuMono Nerd Font:size=13;2"
+font-0 = "Hack Nerd Font:size=10;2"
+font-1 = "Hack Nerd Font:size=13;2"
 font-2 = "forkawesome:style=Regular:pixelsize=10;1"
 
 modules-left = batteryleft bspwm xwindow
