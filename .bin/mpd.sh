@@ -1,1 +1,1 @@
- mpd /home/andre/.config/mpd/mpd.conf
+ mpd $HOME/.config/mpd/mpd.conf
