@@ -2,7 +2,7 @@
 
 # Autostart
 pgrep -x sxhkd > /dev/null || sxhkd &
-/home/andre/.config/polybar/launch.sh &
+$HOME/.config/polybar/launch.sh &
 nitrogen --random --set-zoom-fill &
 picom -f &
 xautolock -time 3 -locker slock &
@@ -41,8 +41,6 @@ bspc monitor -d 1 2 3 4 5 6 7
  bspc config urgent_border_color           "#bedead"
 
 bspc rule -a firefox desktop='^1'
-bspc rule -a "Blueberry.py" state=floating 
-bspc rule -a "Nm-connecton-editor" state=floating
 bspc rule -a "scratchpad" sticky=on state=floating hidden=on
 bspc rule -a *:scratchpad sticky=on state=floating hidden=on
 
