@@ -78,18 +78,20 @@ ws-icon-default = "n/a"
 
 label-focused ="%icon% "
 label-focused-background = ${colors.foreground}
-label-focused-underline = ${colors.background}
+label-focused-underline = ${colors.foreground}
 label-focused-padding = 2 
 label-focused-foreground = ${colors.icons} 
 label-occupied = %icon%
 label-occupied-padding = 2
+label-occupied-foreground = ${colors.alert}
 label-occupied-background = ${colors.background}
-labeö-occupied-underline = ${colors.foreground}
+label-occupied-underline = ${colors.foreground}
 label-urgent = %icon%
 label-urgent-padding = 3
 label-empty = %icon%
 label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
+label-empty-underline =  ${colors.foreground}
 
 ##### Modules 
 [module/batteryleft]
@@ -107,6 +109,9 @@ format-charging-foreground = ${colors.foreground}
 format-charging-background = ${colors.background}
 format-discharging-foreground = ${colors.foreground} 
 format-discharging-background = ${colors.background}
+format-charging-underline = ${colors.foreground}
+format-discharging-underline = ${colors.foreground}
+format-full-underline = ${colors.foreground}
 
 [module/timeIsRight]
 ;https://github.com/jaagr/polybar/wiki/Module:-date
@@ -144,6 +149,7 @@ bar-progress-fill-background = ${colors.background}
 bar-progress-indicator-foreground = #f1dee5
 format-online-foreground = ${colors.foreground}
 format-online-background = ${colors.background}
+format-online-underline =  ${colors.foreground}
 
 [module/pacu]
 type = custom/script
@@ -170,6 +176,7 @@ format-volume-background = ${colors.background}
 format-muted-prefix-foreground = ${colors.foreground}
 format-muted-foreground = ${colors.foreground}
 format-muted-background = ${colors.background}
+format-muted-underline = ${colors.foreground}
 format-volume-underline = ${colors.foreground}
 
 [module/wireless-network]
@@ -208,3 +215,4 @@ label-maxlen = 14
 format-prefix = "| ~> "
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
+format-underline =  ${colors.foreground}
