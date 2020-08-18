@@ -2,7 +2,7 @@
 
 Personal config files 
 
-###. bin
+### .bin
 Contains some scripts e.g. scratchpad creation for alacritty
 
 ### alacritty
@@ -17,5 +17,5 @@ Color and layout config
 ### polybar
 Color and module config
 
-## sxhkd
+### sxhkd
 Shortcuts
