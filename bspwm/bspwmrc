@@ -2,13 +2,13 @@
 
 # Autostart
 pgrep -x sxhkd > /dev/null || sxhkd &
-$HOME/.config/polybar/launch.sh &
+/home/andre/.config/polybar/launch.sh &
 nitrogen --random --set-zoom-fill &
 picom -f &
 xautolock -time 3 -locker slock &
 
 #Additional Start
-/home/andre/.bin/autostart.sh &
+/home/andre/bin/autostart.sh &
 
 bspc monitor -d 1 2 3 4 5 6 7  
 
@@ -40,7 +40,14 @@ bspc monitor -d 1 2 3 4 5 6 7
  bspc config presel_feedback_color         "#deadbe"
  bspc config urgent_border_color           "#bedead"
 
+# Pin to desktops Desktops
+
 bspc rule -a firefox desktop='^1'
+bspc rule -a nextcloud desktop='^7'
+bspc rule -a kdeconnect.app desktop='^7'
+
+# Other rules
+
 bspc rule -a "scratchpad" sticky=on state=floating hidden=on
 bspc rule -a *:scratchpad sticky=on state=floating hidden=on
 

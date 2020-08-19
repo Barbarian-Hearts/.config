@@ -15,7 +15,7 @@ compositing-border = over
  background = #ee161113
  foreground = #deadbe
  icons = #161113
- alert = #bedead
+ 
 
 ##### bspwm
 
@@ -37,7 +37,7 @@ font-0 = "Hack Nerd Font:size=10;2"
 font-1 = "Hack Nerd Font:size=13;2"
 font-2 = "forkawesome:style=Regular:pixelsize=10;1"
 
-modules-left = batteryleft bspwm xwindow
+modules-left = batteryleft bspwm 
 modules-center = mpd
 modules-right = xbacklight pacu volume wireless-network timeIsRight
 
@@ -75,7 +75,7 @@ label-focused-padding = 2
 label-focused-foreground = ${colors.icons} 
 label-occupied = %icon%
 label-occupied-padding = 2
-label-occupied-foreground = ${colors.alert}
+label-occupied-foreground = ${colors.foreground}
 label-occupied-background = ${colors.background}
 label-occupied-underline = ${colors.foreground}
 label-urgent = %icon%
@@ -83,7 +83,7 @@ label-urgent-padding = 3
 label-empty = %icon%
 label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
-label-empty-underline =  ${colors.foreground}
+label-empty-underline =  ${colors.background}
 
 ##### Modules 
 [module/batteryleft]
@@ -125,7 +125,7 @@ type = internal/mpd
 host = 127.0.0.1
 port = 6601
 format-online = "<label-song> <bar-progress> <toggle> "
-format-offline = "silence"
+format-offline = "silence |"
 icon-play = 
 icon-pause = 
 label-song = %title% by %artist%
@@ -141,7 +141,6 @@ bar-progress-fill-background = ${colors.background}
 bar-progress-indicator-foreground = #f1dee5
 format-online-foreground = ${colors.foreground}
 format-online-background = ${colors.background}
-format-online-underline =  ${colors.foreground}
 
 [module/pacu]
 type = custom/script
@@ -197,14 +196,3 @@ label = %percentage%%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-underline = ${colors.foreground}
-
-
-[module/xwindow]
-;https://github.com/jaagr/polybar/wiki/Module:-xwindow
-type = internal/xwindow
-label = %title%
-label-maxlen = 14
-format-prefix = "| ~> "
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-underline =  ${colors.foreground}
