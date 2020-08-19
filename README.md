@@ -2,6 +2,11 @@
 
 Personal config files 
 
+**Screenshot**
+
+![Screenshot](/screenshot/deadbe.png)
+
+
 ### .bin
 Contains some scripts e.g. scratchpad creation for alacritty
 
