@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-    alacritty
+    kitty
 
 # program launcher
 super + d 
@@ -128,4 +128,4 @@ super + l
 
 #scratchpad
 super + u
-    $HOME/.bin/scratch.sh
+    $HOME/bin/scratch.sh
