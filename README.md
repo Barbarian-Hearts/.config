@@ -33,6 +33,7 @@ Shortcuts
 * alacritty
 * [Fork Awesome](https://forkaweso.me/Fork-Awesome/)
 * Hack Nerd Font
+  pywal
 
 ## Optional
 * mpd
