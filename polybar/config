@@ -1,8 +1,10 @@
-#################################
+#              .__         ___.                 
+#______   ____ |  | ___.__.\_ |__ _____ _______ 
+#\____ \ /  _ \|  |<   |  | | __ \\__  \\_  __ \
+#|  |_> >  <_> )  |_\___  | | \_\ \/ __ \|  | \/
+#|   __/ \____/|____/ ____| |___  (____  /__|   
+#|__|               \/          \/     \/       
 #
-# Polybar
-#
-#################################
 
 [global/wm]
 margin-top = 0
@@ -55,6 +57,6 @@ font-2 = "forkawesome:style=Bold:pixelsize=12;1"
 
 ###### Module 
 
-modules-left = batteryleft sep mpd
-modules-center = bspwm 
+modules-left = batteryleft sep mpd 
+modules-center = bspwm
 modules-right = xbacklight sep pacu sep volume sep  wireless-network sep reddit sep timeIsRight

@@ -1,0 +1,14 @@
+############
+#
+# Colors
+#
+############
+
+[colors]
+ bg     = #52101010
+ bga    = ${xrdb:color7:#222}
+ bgaa   = #aa101101
+ fg     = ${xrdb:color6:#222}
+ fga    = ${xrdb:color3:#222}
+ c1     = ${xrdb:color2:#222}
+ c2     = ${xrdb:color4:#222}

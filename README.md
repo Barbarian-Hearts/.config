@@ -4,7 +4,7 @@ Personal config files
 
 **Screenshot**
 
-![Screenshot](/screenshot/deadbe.png)
+![Screenshot](/screenshot/screenshot.png)
 
 
 ### .bin

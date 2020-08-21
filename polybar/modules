@@ -34,9 +34,6 @@ label-empty = %icon%
 label-empty-foreground = ${colors.co3}
 label-empty-background = ${colors.bg2}
 label-empty-padding = 2
-label-separator = |
-label-separator-foreground = ${colors.fg0}
-label-separator-background = ${colors.bg2}
 
 
 ##### Modules 
@@ -47,6 +44,18 @@ content = " | "
 content-background = ${colors.bg2}
 content-foreground = ${colors.fg0}
 content-underline = ${colors.co3}
+
+[module/right]
+type = custom/text
+content = "    " 
+content-background = ${colors.bg0}
+content-foreground = ${colors.fg0}
+
+[module/left]
+type = custom/text
+content = "%{T3}   %{T-}"
+content-background = ${colors.bg0}
+content-foreground = ${colors.fg0}
 
 [module/batteryleft]
 ;https://github.com/jaagr/polybar/wiki/Module:-battery
