@@ -1,41 +1,45 @@
 # .config
 
-Personal config files 
-
 **Screenshot**
 
 ![Screenshot](/screenshot/screenshot.png)
 
-
-### .bin
-Contains some scripts e.g. scratchpad creation for alacritty
-
-### alacritty
-Mostly color settings
-
-### bspwm
+* bspwm
 some autostart stuff and window rules
 
-### ncmcpp
-Color and layout config
+* kitty
+Kitty terminal settings
 
-### polybar
+* mpd & ncmcpp
+Color and layout config; mpd server settings
+
+* picom
+compositor
+
+* polybar
 Color and module config
 
-### sxhkd
+* ranger
+Enable kitty backend; ffmpeg based preview images for movies
+
+* sxhkd
 Shortcuts
+
+* tuir
+Terminal UI Reddit Settings 
 
 ## Dependencies
 * bspwm
 * sxkhd
 * polybar
 * picom
-* alacritty
+* kitty
 * [Fork Awesome](https://forkaweso.me/Fork-Awesome/)
 * Hack Nerd Font
-  pywal
+* pywal
+* tuir
+* dmenu
+* ranger
+* ncmpcpp & mpd
 
-## Optional
-* mpd
-* ncmpcpp
-
+*Note:* Potentially migrading to modpidy
