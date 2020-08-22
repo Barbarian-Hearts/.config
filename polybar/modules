@@ -1,10 +1,10 @@
-
-#################################
-#
-# Modules 
-#
-#################################
-
+#                    .___    .__                 
+#   _____   ____   __| _/_ __|  |   ____   ______
+#  /     \ /  _ \ / __ |  |  \  | _/ __ \ /  ___/
+# |  Y Y  (  <_> ) /_/ |  |  /  |_\  ___/ \___ \ 
+# |__|_|  /\____/\____ |____/|____/\___  >____  >
+#       \/            \/               \/     \/ 
+ 
 [module/bspwm]
 type = internal/bspwm
 enable-click = true
@@ -174,3 +174,5 @@ label = %percentage%%
 format-foreground = ${colors.fg0}
 format-background = ${colors.bg2}
 format-underline = ${colors.co3}
+
+; vim:ft=dosini
