@@ -2,7 +2,7 @@
 
 **Screenshot**
 
-![Screenshot](/screenshot/screenshot.png)
+![Screenshot](/screenshot/cruel_summer.png)
 
 * bspwm
 some autostart stuff and window rules

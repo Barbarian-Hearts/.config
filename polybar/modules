@@ -21,18 +21,18 @@ ws-icon-default = "n/a"
 
 format = <label-state>
 label-focused ="%icon% "
-label-focused-background = ${colors.fg0}
+label-focused-background = ${colors.bg1}
 label-focused-padding = 2
-label-focused-foreground = ${colors.bg0} 
+label-focused-foreground = ${colors.co3} 
 label-occupied = %icon%
 label-occupied-padding = 2
 label-occupied-foreground = ${colors.fg0}
-label-occupied-background = ${colors.bg2}
+label-occupied-background = ${colors.bg1}
 label-urgent = %icon%
 label-urgent-padding = 2
 label-empty = %icon%
-label-empty-foreground = ${colors.co3}
-label-empty-background = ${colors.bg2}
+label-empty-foreground = ${colors.fg1}
+label-empty-background = ${colors.bg1}
 label-empty-padding = 2
 
 
@@ -41,21 +41,32 @@ label-empty-padding = 2
 [module/sep]
 type = custom/text
 content = " | "
-content-background = ${colors.bg2}
-content-foreground = ${colors.fg0}
-content-underline = ${colors.co3}
+content-background = ${colors.bg1}
+content-foreground = ${colors.fg1}
 
 [module/right]
 type = custom/text
-content = "    " 
+content = "%{T3}    %{T-}"
 content-background = ${colors.bg0}
-content-foreground = ${colors.fg0}
+content-foreground = ${colors.bg1}
 
 [module/left]
 type = custom/text
-content = "%{T3}   %{T-}"
+content = "%{T3}   %{T-}"
 content-background = ${colors.bg0}
-content-foreground = ${colors.fg0}
+content-foreground = ${colors.bg1}
+
+[module/barleft]
+type = custom/text
+content = "%{T3}   %{T-}"
+content-background = ${colors.bg0}
+content-foreground = ${colors.bg1}
+
+[module/barright]
+type = custom/text
+content = "%{T3}  %{T-}"
+content-background = ${colors.bg0}
+content-foreground = ${colors.bg1}
 
 [module/batteryleft]
 ;https://github.com/jaagr/polybar/wiki/Module:-battery
@@ -69,12 +80,9 @@ label-discharging = "  %time%"
 label-full = "   "
 format-charging = <label-charging>
 format-charging-foreground = ${colors.fg0}
-format-charging-background = ${colors.bg2}
+format-charging-background = ${colors.bg1}
 format-discharging-foreground = ${colors.fg0} 
-format-discharging-background = ${colors.bg2}
-format-charging-underline = ${colors.co3}
-format-discharging-underline = ${colors.co3}
-format-full-underline = ${colors.co3}
+format-discharging-background = ${colors.bg1}
 
 [module/timeIsRight]
 ;https://github.com/jaagr/polybar/wiki/Module:-date
@@ -86,8 +94,7 @@ time = %H:%M
 format-prefix = "   "
 format-prefix-foreground = ${colors.fg0}
 format-foreground = ${colors.fg0}
-format-background = ${colors.bg2}
-format-underline = ${colors.co3}
+format-background = ${colors.bg1}
 label = "%time% "
 
 [module/mpd]
@@ -95,8 +102,8 @@ label = "%time% "
 type = internal/mpd
 host = 127.0.0.1
 port = 6601
-format-online = "<label-song> <bar-progress> "
-format-offline = "silence"
+format-online = "%{A1:mpc -p 6601 toggle:}%{A3:kitty --name=audio --title=audio --class=audio ncmpcpp:}<label-song> <bar-progress>%{A}%{A} "
+format-offline = "And there was silence "
 icon-play = " " 
 icon-pause = " " 
 label-song = %title% by %artist%
@@ -106,9 +113,8 @@ bar-progress-width = 5
 bar-progress-indicator = •
 bar-progress-fill = •
 bar-progress-empty = •
-format-online-underline = ${colors.co3}
-format-online-background = ${colors.bg2}
-format-offline-underline = ${colors.co3}
+format-online-background = ${colors.bg1}
+format-offline-background = ${colors.bg1}
 bar-progress-empty-foreground = ${colors.co3}
 
 
@@ -118,19 +124,17 @@ exec = pacman -Qu | wc -l
 interval = 1000
 label = " %output% "
 format-foreground = ${colors.fg0}
-format-background = ${colors.bg2}
-format-underline = ${colors.co3}
+format-background = ${colors.bg1}
 format-prefix = "  "
 format-prefix-foreground = ${colors.fg0}
-format-prefix-background = ${colors.bg2}
+format-prefix-background = ${colors.bg1}
 
 [module/reddit]
 type = custom/script
 exec = ~/.config/polybar/scripts/notification-reddit.sh
 intervall = 60
-format-underline = ${colors.co3}
 format-foreground = ${colors.fg0}
-format-background = ${colors.bg2}
+format-background = ${colors.bg1}
 
 [module/volume]
 ;https://github.com/jaagr/polybar/wiki/Module:-volume
@@ -138,15 +142,13 @@ type = internal/alsa
 format-volume = <label-volume>
 label-volume = "   %percentage%% "
 label-volume-foreground = ${colors.fg0}
-label-volume-background = ${colors.bg2}
+label-volume-background = ${colors.bg1}
 label-muted = "   "
 format-volume-foreground = ${colors.fg0}
-format-volume-background = ${colors.bg2}
+format-volume-background = ${colors.bg1}
 format-muted-prefix-foreground = ${colors.fg0}
 format-muted-foreground = ${colors.fg0}
-format-muted-background = ${colors.bg2}
-format-muted-underline = ${colors.co3}
-format-volume-underline = ${colors.co3}
+format-muted-background = ${colors.bg1}
 
 [module/wireless-network]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
@@ -156,12 +158,10 @@ interval = 3.0
 label-connected = "   1 " 
 format-connected = <label-connected>
 format-connected-foreground = ${colors.fg0} 
-format-connected-background = ${colors.bg2} 
+format-connected-background = ${colors.bg1} 
 label-disconnected = "   0 " 
 label-disconnected-foreground = ${colors.fg0}
-label-disconnected-background = ${colors.bg2} 
-format-connected-underline = ${colors.co3}
-format-disconnected-underline = ${colors.co3}
+label-disconnected-background = ${colors.bg1} 
 
 [module/xbacklight]
 ;https://github.com/jaagr/polybar/wiki/Module:-xbacklight
@@ -169,10 +169,9 @@ type = internal/xbacklight
 format = <label>
 format-prefix = "   "
 format-prefix-foreground = ${colors.fg0}
-format-prefix-background = ${colors.bg2}
+format-prefix-background = ${colors.bg1}
 label = %percentage%%
 format-foreground = ${colors.fg0}
-format-background = ${colors.bg2}
-format-underline = ${colors.co3}
+format-background = ${colors.bg1}
 
 ; vim:ft=dosini
