@@ -1,0 +1,79 @@
+#!/bin/sh
+#
+# ufetch-artix - tiny system info for artix
+
+## INFO
+
+# user is already defined
+os='artix'
+kernel="$(uname -r)"
+uptime="$(uptime -p | sed 's/up //')"
+packages="$(pacman -Q | wc -l)"
+shell="$(basename "$SHELL")"
+
+## UI DETECTION
+
+if [ -n "${DE}" ]; then
+	ui="${DE}"
+	uitype='de'
+elif [ -n "${WM}" ]; then
+	ui="${WM}"
+	uitype='WM'
+elif [ -n "${XDG_CURRENT_DESKTOP}" ]; then
+	ui="${XDG_CURRENT_DESKTOP}"
+	uitype='de'
+elif [ -n "${DESKTOP_SESSION}" ]; then
+	ui="${DESKTOP_SESSION}"
+	uitype='de'
+elif [ -f "${HOME}/.xinitrc" ]; then
+	ui="$(tail -n 1 "${HOME}/.xinitrc" | cut -d ' ' -f 2)"
+	uitype='WM'
+elif [ -f "${HOME}/.xsession" ]; then
+	ui="$(tail -n 1 "${HOME}/.xsession" | cut -d ' ' -f 2)"
+	uitype='WM'
+else
+	ui='unknown'
+	uitype='UI'
+fi
+
+## DEFINE COLORS
+
+# probably don't change these
+if [ -x "$(command -v tput)" ]; then
+	bold="$(tput bold)"
+	black="$(tput setaf 0)"
+	red="$(tput setaf 1)"
+	green="$(tput setaf 2)"
+	yellow="$(tput setaf 3)"
+	blue="$(tput setaf 4)"
+	magenta="$(tput setaf 5)"
+	cyan="$(tput setaf 6)"
+	white="$(tput setaf 7)"
+	reset="$(tput sgr0)"
+fi
+
+# you can change these
+lc="${reset}${bold}${blue}"         # labels
+nc="${reset}${bold}${blue}"         # user and hostname
+ic="${reset}"                       # info
+c0="${reset}${white}"               # first color
+c1="${reset}${red}"                 # first color
+#c2="${reset}${green}"               # first color
+#c3="${reset}${yellow}"              # first color
+#c4="${reset}${blue}"                # first color
+#c5="${reset}${magenta}"             # first color
+#c6="${reset}${cyan}"                # first color
+
+## OUTPUT
+
+cat <<EOF
+
+${c0}        /\\        ${lc}user   ${c0}~  ${ic}${USER}${ic}${nc}${host}${reset}
+${c0}       /  \\       ${lc}os     ${c0}~  ${ic}${os}${reset}
+${c0}      /\`'.,\\      ${lc}kernel ${c0}~  ${ic}${kernel}${reset}
+${c0}     /     ',     ${lc}uptime ${c0}~  ${ic}${uptime}${reset}
+${c0}    /      ,\`\\    ${lc}pacman ${c0}~  ${ic}${packages}${reset}
+${c0}   /   ,.'\`.  \\   ${lc}shell  ${c0}~  ${ic}${shell}${reset}
+${c0}  /.,'\`     \`'.\\  ${lc}${uitype}     ${c0}~  ${ic}${ui}${reset}
+
+EOF

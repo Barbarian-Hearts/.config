@@ -2,7 +2,7 @@
 
 **Screenshot**
 
-![Screenshot](/screenshot/cruel_summer.png)
+![Screenshot](/screenshot/pretender.png)
 
 * bspwm
 some autostart stuff and window rules
@@ -43,3 +43,8 @@ Terminal UI Reddit Settings
 * ncmpcpp & mpd
 
 *Note:* Potentially migrading to modpidy
+
+Old screenshots:
+![Screenshot](/screenshot/cruel_summer.png)
+![Screenshot](screenshot/screenshot.png)
+![Screenshot](screenshot/deadbe.png)

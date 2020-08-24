@@ -1,15 +1,20 @@
-#              .__                       
-#   ____  ____ |  |   ___________  ______
-# _/ ___\/  _ \|  |  /  _ \_  __ \/  ___/
-# \  \__(  <_> )  |_(  <_> )  | \/\___ \ 
-#  \___  >____/|____/\____/|__|  /____  >
-#      \/                             \/ 
-
 [colors]
- bg     = #52101010
- bga    = ${xrdb:color7:#222}
- bgaa   = #aa101101
- fg     = ${xrdb:color6:#222}
- fga    = ${xrdb:color3:#222}
- c1     = ${xrdb:color2:#222}
- c2     = ${xrdb:color4:#222}
+  bg0    = #11112112
+  bg1    = ${xrdb:color7:#222}
+  bg2    = #aa112112
+  fg0    = ${xrdb:color0:#222}
+  fg1    = ${xrdb:color3:#222}
+  co1    = ${xrdb:color2:#222}
+  co2    = ${xrdb:color4:#222}
+  co3    = ${xrdb:color6:#222}
+  c0     = ${xrdb:color0:#222}
+  c1     = ${xrdb:color1:#222}
+  c2     = ${xrdb:color2:#222}
+  c3     = ${xrdb:color3:#222}
+  c4     = ${xrdb:color4:#222}
+  c5     = ${xrdb:color5:#222}
+  c6     = ${xrdb:color6:#222}
+  c7     = ${xrdb:color7:#222}
+  c8     = ${xrdb:color8:#222}
+
+

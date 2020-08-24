@@ -6,58 +6,27 @@
 # |__|               \/          \/     \/       
 # 
 
-[global/wm]
-margin-top = 0
-margin-bottom = 0
-throttle-output = 5
-throttle-output-for = 10
-throttle-input-for = 30
-screenchange-reload = true
-compositing-background = over
-compositing-foreground = over
-compositing-overline = over
-compositing-underline = over
-compositing-border = over
-
+include-file = ~/.config/polybar/colors
 include-file = ~/.config/polybar/modules
-
-[colors]
- bg0    = #cc112112
- bg1    = ${xrdb:color7:#222}
- bg2    = #aa112112
- fg0    = ${xrdb:color0:#222}
- fg1    = ${xrdb:color3:#222}
- co1    = ${xrdb:color2:#222}
- co2    = ${xrdb:color4:#222}
- co3    = ${xrdb:color6:#222}
 
 [bar/bspwm]
 monitor = ${env:MONITOR:eDP1}
 width = 100%
 height = 18
 fixed-center = true
-background = ${colors.bg0}
+background = ${colors.bg1}
 foreground = ${colors.fg0}
 wm-restack = bspwm
-override-redirect = true
 enable-ipc = true
 locale = de_DE.utf-8
-radius = 3
+radius = 10
 
+font-0 = "Hack Nerd Font:size=9;2"
+font-1 = "Hack Nerd Font:size=13;3"
+font-2 = "forkawesome:style=Bold:pixelsize=10;4"
 
-font-0 = "Hack Nerd Font:size=10:2"
-font-1 = "Hack Nerd Font:size=12:2"
-font-2 = "forkawesome:style=Bold:pixelsize=12;1"
-
-#   _____             .___    .__                 
-#  /     \   ____   __| _/_ __|  |   ____   ______
-# /  \ /  \ /  _ \ / __ |  |  \  | _/ __ \ /  ___/
-#/    Y    (  <_> ) /_/ |  |  /  |_\  ___/ \___ \ 
-#\____|__  /\____/\____ |____/|____/\___  >____  >
-#        \/            \/               \/     \/ 
-
-modules-left = batteryleft sep mpd barright
-modules-center = left bspwm right
-modules-right = barleft xbacklight sep pacu sep volume sep  wireless-network sep reddit sep timeIsRight
+modules-left = batteryleft sepr mpd sepr
+modules-center = sepll sepl bspwm sepr seprr
+modules-right = sepl xbacklight sepr pacu sepr volume sepr  wireless-network sepr reddit sepr timeIsRight
 
 ; vim:ft=dosini
