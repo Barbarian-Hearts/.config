@@ -19,11 +19,10 @@ foreground = ${colors.fg0}
 wm-restack = bspwm
 enable-ipc = true
 locale = de_DE.utf-8
-radius = 10
 
 font-0 = "Hack Nerd Font:size=9;2"
 font-1 = "Hack Nerd Font:size=13;3"
-font-2 = "forkawesome:style=Bold:pixelsize=10;4"
+font-2 = "forkawesome:style=Bold:pixelsize=12;4"
 
 modules-left = batteryleft sepr mpd sepr
 modules-center = sepll sepl bspwm sepr seprr

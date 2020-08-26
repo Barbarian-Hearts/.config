@@ -4,6 +4,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 ~/.config/polybar/launch.sh &
 wal -R &
+~/.scripts/dunst
 picom -f &
 xautolock -time 3 -locker slock &
 pgrep -x mpd > /dev/null || mpd $HOME/.config/mpd/mpd.conf &
@@ -14,14 +15,14 @@ bspc monitor -d 1 2 3 4 5 6 7
 
  # BSPWM config 
  bspc config border_width                  2
- bspc config window_gap                    6
+ bspc config window_gap                    8
  bspc config top_padding                   17
  bspc config bottom_padding                0
  bspc config left_padding                  0
  bspc config right_padding                 0
  bspc config single_monocle                false
  bspc config click_to_focus                true
- bspc config split_ratio                   0.52
+ bspc config split_ratio                   0.50
  bspc config borderless_monocle            true
  bspc config gapless_monocle               true
  bspc config focus_by_distance             true

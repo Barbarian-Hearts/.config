@@ -1,8 +1,8 @@
 [colors]
   bg0    = #11112112
-  bg1    = ${xrdb:color7:#222}
+  bg1    = ${xrdb:color0:#222}
   bg2    = #aa112112
-  fg0    = ${xrdb:color0:#222}
+  fg0    = ${xrdb:color7:#222}
   fg1    = ${xrdb:color3:#222}
   co1    = ${xrdb:color2:#222}
   co2    = ${xrdb:color4:#222}
@@ -15,6 +15,6 @@
   c5     = ${xrdb:color5:#222}
   c6     = ${xrdb:color6:#222}
   c7     = ${xrdb:color7:#222}
-  c8     = ${xrdb:color8:#222}
+  c8     = ${xrdb:color1:#222}
 
 

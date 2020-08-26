@@ -27,12 +27,12 @@ label-focused-padding = 2
 label-focused-foreground = ${colors.c4}
 label-occupied = ﱣ
 label-occupied-padding = 2
-label-occupied-foreground = ${colors.c3}
+label-occupied-foreground = ${colors.c2}
 label-occupied-background = ${colors.bg1}
 label-urgent = %icon%
 label-urgent-padding = 2
 label-empty = •
-label-empty-foreground = ${colors.co1}
+label-empty-foreground = ${colors.c3}
 label-empty-background = ${colors.bg1}
 label-empty-padding = 2
 
@@ -84,11 +84,11 @@ label-charging = "%percentage%%"
 label-discharging = "%time%" 
 format-charging-prefix = "  "
 format-discharging-prefix = "  "
-format-charging-foreground = ${colors.c0}
+format-charging-foreground = ${colors.fg0}
 format-charging-prefix-foreground = ${colors.c3}
 format-charging-background = ${colors.bg1}
 format-discharging-prefix-foreground = ${colors.c3}
-format-discharging-foreground = ${colors.c0} 
+format-discharging-foreground = ${colors.fg0} 
 format-discharging-background = ${colors.bg1}
 
 [module/timeIsRight]
