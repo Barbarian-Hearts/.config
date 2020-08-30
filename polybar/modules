@@ -24,7 +24,7 @@ format = <label-state>
 label-focused = "%{T3}ﱣ%{T-}"
 label-focused-background = ${colors.bg1}
 label-focused-padding = 2
-label-focused-foreground = ${colors.c4}
+label-focused-foreground = ${colors.c7}
 label-occupied = ﱣ
 label-occupied-padding = 2
 label-occupied-foreground = ${colors.c2}
@@ -32,7 +32,7 @@ label-occupied-background = ${colors.bg1}
 label-urgent = %icon%
 label-urgent-padding = 2
 label-empty = •
-label-empty-foreground = ${colors.c3}
+label-empty-foreground = ${colors.c4}
 label-empty-background = ${colors.bg1}
 label-empty-padding = 2
 
@@ -45,33 +45,46 @@ label-empty-padding = 2
 
 [module/sepr]
 type = custom/text
-content = "  "
+content = ""
 content-background = ${colors.bg1}
-content-foreground = ${colors.c3}
+content-foreground = ${colors.c6}
 
 [module/seprr]
 type = custom/text
-content = "%{T2}  %{T-}"
+content = "%{T2}%{T-}"
 content-background = ${colors.bg1}
-content-foreground = ${colors.c3}
+content-foreground = ${colors.c6}
 
 [module/sepl]
 type = custom/text
-content = "  "
+content = ""
 content-background = ${colors.bg1}
-content-foreground = ${colors.c3}
+content-foreground = ${colors.c6}
 
 [module/sepll]
 type = custom/text
-content = "%{T2}  %{T-}"
+content = "%{T2}%{T-}"
 content-background = ${colors.bg1}
-content-foreground = ${colors.c3}
+content-foreground = ${colors.c6}
 
+[module/sepb]
+type = custom/text
+content = " "
+content-background = ${colors.bg1}
+content-foreground = ${colors.c6}
 #                     __    
 #__  _  _____________|  | __
 #\ \/ \/ /  _ \_  __ \  |/ /
 # \     (  <_> )  | \/    < 
 #  \/\_/ \____/|__|  |__|_ \
+
+[module/polywins]
+type = custom/script
+exec = ~/.config/polybar/scripts/polywins.sh 2>/dev/null
+format = <label>
+label = %output%
+label-padding = 1
+tail = true
 
 [module/batteryleft]
 ;https://github.com/jaagr/polybar/wiki/Module:-battery
@@ -79,15 +92,16 @@ type = internal/battery
 battery = BAT0
 adapter = AC0
 full-at = 100
+label-padding = 1
 time-format = %H:%M
 label-charging = "%percentage%%"
-label-discharging = "%time%" 
+label-discharging = "%percentage%%"
 format-charging-prefix = "  "
 format-discharging-prefix = "  "
 format-charging-foreground = ${colors.fg0}
-format-charging-prefix-foreground = ${colors.c3}
+format-charging-prefix-foreground = ${colors.c6}
 format-charging-background = ${colors.bg1}
-format-discharging-prefix-foreground = ${colors.c3}
+format-discharging-prefix-foreground = ${colors.c6}
 format-discharging-foreground = ${colors.fg0} 
 format-discharging-background = ${colors.bg1}
 
@@ -98,43 +112,46 @@ interval = 5
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 date = "%d.%m.%y"
 time = %H:%M
-format-prefix = "   "
-format-prefix-foreground = ${colors.c3}
+format-prefix = "  "
+format-prefix-foreground = ${colors.c6}
 format-foreground = ${colors.fg0}
 format-background = ${colors.bg1}
-label = "%time%  "
+label = "%time%"
+label-padding = 1
 
 [module/mpd]
 ;https://github.com/jaagr/polybar/wiki/Module:-mpd
 type = internal/mpd
 host = 127.0.0.1
-port = 6600
-format-online = "%{A1:mpc -p 6600 toggle:}%{A3:kitty --name=audio --title=audio --class=audio ncmpcpp:}<label-song> <bar-progress>%{A}%{A} "
-format-offline = "And there was silence "
+port = 6601
+format-online = " %{A1:mpc -p 6601 toggle:}%{A3:kitty --name=audio --title=audio --class=audio ncmpcpp -p 6601:} <label-song> <bar-progress>%{A}%{A} "
+format-offline = "  And there was silence "
 icon-play = " " 
 icon-pause = " " 
 label-song = %title% by %artist%
 label-song-maxlen = 60
 label-song-ellipsis = true
-bar-progress-width = 5
+bar-progress-width = 10
 bar-progress-indicator = •
 bar-progress-fill = •
 bar-progress-empty = •
 format-online-background = ${colors.bg1}
 format-offline-background = ${colors.bg1}
-bar-progress-empty-foreground = ${colors.c1}
-bar-progress-indicator-foreground = ${colors.c4}
+bar-progress-empty-foreground = ${colors.c4}
+bar-progress-indicator-foreground = ${colors.c6}
+bar-progress-fill-foreground = ${colors.c8}
+label-padding = 1
 
 
 [module/pacu]
 type = custom/script
 exec = pacman -Qu | wc -l
 interval = 1000
-label = " %output% "
+label = " %output%"
 format-foreground = ${colors.fg0}
 format-background = ${colors.bg1}
 format-prefix = "  "
-format-prefix-foreground = ${colors.c3}
+format-prefix-foreground = ${colors.c6}
 format-prefix-background = ${colors.bg1}
 
 [module/reddit]
@@ -142,7 +159,7 @@ type = custom/script
 exec = ~/.config/polybar/scripts/notification-reddit.sh
 intervall = 60
 format-prefix = "   "
-format-prefix-foreground = ${colors.c3}
+format-prefix-foreground = ${colors.c6}
 format-foreground = ${colors.fg0}
 format-background = ${colors.bg1}
 
@@ -150,16 +167,16 @@ format-background = ${colors.bg1}
 ;https://github.com/jaagr/polybar/wiki/Module:-volume
 type = internal/alsa
 format-volume = <label-volume>
-label-volume = "%percentage%% "
+label-volume = "%percentage%%"
 format-volume-prefix = "   "
-format-volume-prefix-foreground = ${colors.c3}
+format-volume-prefix-foreground = ${colors.c6}
 label-volume-foreground = ${colors.fg0}
 label-volume-background = ${colors.bg1}
-label-muted = "   "
+label-muted = "  "
 format-volume-foreground = ${colors.c0}
 format-volume-background = ${colors.bg1}
-format-muted-prefix-foreground = ${colors.c3}
-format-muted-foreground = ${colors.c3}
+format-muted-prefix-foreground = ${colors.c6}
+format-muted-foreground = ${colors.c6}
 format-muted-background = ${colors.bg1}
 
 [module/wireless-network]
@@ -167,15 +184,15 @@ format-muted-background = ${colors.bg1}
 type = internal/network
 interface = ${env:WIRELESS}
 interval = 3.0
-label-connected = "1 " 
+label-connected = "1" 
 format-connected-prefix = "   "
-format-connected-prefix-foreground = ${colors.c3}
+format-connected-prefix-foreground = ${colors.c6}
 format-connected = <label-connected>
 format-connected-foreground = ${colors.fg0} 
 format-connected-background = ${colors.bg1} 
-label-disconnected = "0 " 
+label-disconnected = "0" 
 format-disconnected-prefix = "   "
-format-disconnected-prefix-foreground = ${colors.c3}
+format-disconnected-prefix-foreground = ${colors.c6}
 label-disconnected-foreground = ${colors.fg0}
 label-disconnected-background = ${colors.bg1} 
 
@@ -184,9 +201,9 @@ label-disconnected-background = ${colors.bg1}
 type = internal/xbacklight
 format = <label>
 format-prefix = "   "
-format-prefix-foreground = ${colors.c3}
+format-prefix-foreground = ${colors.c6}
 format-prefix-background = ${colors.bg1}
-label = "%percentage%% "
+label = "%percentage%%"
 format-foreground = ${colors.fg0}
 format-background = ${colors.bg1}
 

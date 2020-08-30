@@ -19,13 +19,16 @@ foreground = ${colors.fg0}
 wm-restack = bspwm
 enable-ipc = true
 locale = de_DE.utf-8
+offset-y = 2
+radius = 5
+border-size = 2
 
 font-0 = "Hack Nerd Font:size=9;2"
 font-1 = "Hack Nerd Font:size=13;3"
 font-2 = "forkawesome:style=Bold:pixelsize=12;4"
 
-modules-left = batteryleft sepr mpd sepr
-modules-center = sepll sepl bspwm sepr seprr
-modules-right = sepl xbacklight sepr pacu sepr volume sepr  wireless-network sepr reddit sepr timeIsRight
+modules-left = sepll sepl bspwm sepr seprr
+modules-center = sepll sepl polywins sepr seprr
+modules-right = sepll sepl mpd sepb xbacklight sepb pacu sepb volume sepb wireless-network sepb reddit sepb batteryleft sepb timeIsRight sepr seprr
 
 ; vim:ft=dosini
