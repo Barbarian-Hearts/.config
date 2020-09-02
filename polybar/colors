@@ -1,20 +1,20 @@
 [colors]
-  bg0    = #00112112
-  bg1    = #11131213
-  bg2    = #aa112112
-  fg0    = #3d62f5
+  bg0    = #112112
+  bg1    = #2a2a28
+  bg2    = #2a2a28
+  fg0    = #E95E4A
   fg1    = #c3c322
   co1    = #29a329
-  co2    = #3d62f5
-  co3    = #1999b3
+  co2    = #BD5043
+  co3    = #E95E4A
   c0     = #131213
   c1     = #e6193c
-  c2     = #29a329
+  c2     = #2a2a28
   c3     = #c3c322
-  c4     = #3d62f5
+  c4     = #c3afa3
   c5     = #ad2bee
-  c6     = #1999b3
-  c7     = #8ca68c
+  c6     = #BD5043
+  c7     = #E95E4a
   c8     = #f0fff0
 
 
