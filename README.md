@@ -1,7 +1,7 @@
 # .config
 
 **Screenshot**
-![Screenshot](/screenshot/Sontag.png)
+![Screenshot](/screenshot/sontag.png)
 
 * bspwm
 some autostart stuff and window rules
