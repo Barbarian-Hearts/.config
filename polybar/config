@@ -14,7 +14,28 @@ monitor = ${env:MONITOR:eDP1}
 width = 100%
 height = 18
 fixed-center = true
-background = ${colors.bg1}
+background = ${colors.bg0}
+foreground = ${colors.fg0}
+wm-restack = bspwm
+enable-ipc = true
+locale = de_DE.utf-8
+offset-y = 3
+padding = 1.5
+
+font-0 = "Hack Nerd Font:size=9;2"
+font-1 = "Hack Nerd Font:size=13;3"
+font-2 = "forkawesome:style=Bold:pixelsize=12;4"
+
+modules-left = bspwm 
+modules-center = polywins
+modules-right = xbacklight sep pacu sep volume sep wireless-network sep reddit sep battery sep timeIsRight
+
+[bar/2bwm]
+monitor = ${env:MONITOR:eDP1}
+width = 100%
+height = 18
+fixed-center = true
+background = ${colors.bg0}
 foreground = ${colors.fg0}
 wm-restack = bspwm
 enable-ipc = true
@@ -27,6 +48,5 @@ font-2 = "forkawesome:style=Bold:pixelsize=12;4"
 
 modules-left = sepll sepl bspwm sepr seprr
 modules-center = sepll sepl polywins sepr seprr
-modules-right = sepll sepl xbacklight sepb pacu sepb volume sepb wireless-network sepb reddit sepb batteryleft sepb timeIsRight sepr seprr
-
+modules-right = sepll sepl xbacklight sepb pacu sepb volume sepb wireless-network sepb reddit sepb battery sepb timeIsRight sepr seprr
 ; vim:ft=dosini

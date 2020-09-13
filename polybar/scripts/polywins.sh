@@ -3,21 +3,21 @@
 
 # SETTINGS {{{ ---
 
-active_text_color="#E95e4a"
-active_bg=""
-active_underline="#1999b3"
+active_text_color="#dddddd"
+active_bg="#ec131213"
+active_underline=
 
-inactive_text_color="#BA1011"
-inactive_bg=
-inactive_underline="#8ca68c"
+inactive_text_color="#88dddddd"
+inactive_bg="#ec131213"
+inactive_underline=
 
-separator="·"
+separator=
 show="window_class" # options: window_title, window_class, window_classname
 forbidden_classes="Polybar Conky Gmruni scratch"
 empty_desktop_message="bspwm"
 
 char_limit=20
-max_windows=15
+max_windows=8
 char_case="normal" # normal, upper, lower
 add_spaces="true"
 resize_increment=16

@@ -1,7 +1,7 @@
 # .config
 
 **Screenshot**
-![Screenshot](/screenshot/fish.png)
+![Screenshot](/screenshot/Sontag.png)
 
 * bspwm
 some autostart stuff and window rules
@@ -44,6 +44,7 @@ Terminal UI Reddit Settings
 *Note:* Potentially migrading to modpidy
 
 Old screenshots:
+![Screenshot](/screenshot/fish.png)
 ![Screenshot](/screenshot/brainOS.png)
 ![Screenshot](/screenshot/cat.png)
 ![Screenshot](/screenshot/pretender.png)
